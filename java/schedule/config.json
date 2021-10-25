@@ -1,0 +1,38 @@
+{
+	production: {
+		WEB: {
+			enabled: true,
+			port: 3333,
+			context: "/CJQX/"
+		},
+		MONGODB: {
+		    address: "192.168.40.124",
+		    username: "cc",
+		    password: "cc",
+		    port: 27017,
+		    database:"petrol_data",
+		},
+		PREDICT: {
+			restrict: true,
+			suffix: "_or"
+		}
+	},
+	development: {
+		WEB: {
+			enabled: true,
+			port: 3333,
+			context: "/CJQX/"
+		},
+		MONGODB: {
+		   	address: "server.5gdt.ai",
+		    username: "cc",
+		    password: "cc",
+		    port: 27251,
+		    database:"petrol_data",
+	    },
+		PREDICT: {
+			restrict: true,
+			suffix: "_or"
+		}
+	}
+}

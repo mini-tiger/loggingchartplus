@@ -1,0 +1,39 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+logs/
+npm-debug.log
+yarn-error.log
+node_modules/
+coverage/
+.idea/
+.DS_Store
+*.sw*
+*.un~
+.nodejs-cache
+.happypack
+.tmp/
+*.csv
+*.log
+# client
+/client/build/
+/client/dist/
+/server/tmpzip/
+
+# server
+/server/logs/
+/server/run/
+
+# java
+/java/schedule/.settings/
+/java/schedule/bin/
+/java/schedule/classes/
+/java/schedule/input/
+/java/schedule/output/
+/java/schedule/temp/
+/java/schedule/target/*
+!/java/schedule/target/kms-schedule-1.1-jar-with-dependencies.jar
+/java/schedule/lib/fastjson-1.1.38.jar
+/java/schedule/lib/log4j-1.2.15.jar
+/java/schedule/lib/mongo-java-driver-3.0.4.jar
+/java/schedule/lib/slf4j-api-1.7.26.jar
+/java/schedule/lib/slf4j-log4j12-1.7.26.jar

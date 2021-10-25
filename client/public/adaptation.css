@@ -1,0 +1,95 @@
+body {  
+     background-color: #f3f3f4;
+}
+
+body #ice-container .adaptationContainer {
+    min-width : 1000px !important;
+    overflow-y: auto !important;
+    display   : block !important;
+}
+
+.adaptationContainer .next-loading-wrap>div a {
+    margin-bottom: 20px;
+}
+
+.adaptationContainer .adaptation-iceContainer-wrapper.next-col {
+    min-width: 535px;
+    flex     : none !important;
+}
+
+.adaptationContainer .next-col .container-block div:nth-child(2) {
+    display        : flex !important;
+    align-items    : center !important;
+    justify-content: left !important;
+}
+
+.adaptationContainer .next-col .container-block div:nth-child(2)>div {
+    margin-left: 20px;
+}
+
+.adaptationContainer .next-col .container-block div:nth-child(2)>div i {
+    display    : inline;
+    margin     : 0 !important;
+    line-height: 56px;
+}
+
+.adaptationContainer .next-col .container-block .ice-label.ice-label-success,
+.adaptationContainer .next-col .container-block .ice-label.ice-label-default {
+    margin-left: 25px;
+    padding    : 0 12px;
+    font-size  : 12px;
+    height     : 28px;
+    line-height: 28px;
+}
+
+.adaptationContainer .next-col .container-block div:nth-child(2) button {
+    margin-left: 25px;
+}
+
+/* 步骤5 */
+.adaptationContainer .container-block div:nth-of-type(5) .ice-panel.ice-panel-default .ice-panel-body .container-block .container-block .next-row {
+    display: inline-block !important;
+}
+
+.adaptationContainer .container-block div:nth-of-type(5) .ice-panel.ice-panel-default .ice-panel-body .container-block .container-block .next-row .next-col {
+    display  : inline-block !important;
+    width    : auto !important;
+    max-width: none !important;
+    min-width: 200px !important;
+}
+
+.adaptationContainer .container-block div:nth-of-type(5) .ice-panel.ice-panel-default .ice-panel-body .container-block .container-block .next-row div:nth-of-type(2) {
+    margin: 0 20px;
+}
+
+.adaptationContainer .container-block .next-row div:nth-of-type(1),
+.adaptationContainer .container-block .next-row div:nth-of-type(2) {
+    display: inline;
+}
+
+.adaptationContainer .container-block .next-row div:nth-of-type(2) {
+    margin-left: 100px;
+}
+
+.adaptationContainer .container-block .next-row div:nth-of-type(3) {
+    margin-top: 30px;
+}
+
+/* 步骤2 */
+@media screen and (max-width: 1300px) {
+    .adaptationContainer .adaptationTransferContainer .next-transfer-panel {
+        min-width: 390px;
+        width    : 390px;
+        overflow : hidden;
+    }
+
+    .adaptationContainer .next-transfer .next-transfer-panel .next-transfer-panel-list {
+        min-width: 393px !important;
+    }
+
+    .adaptationContainer .next-transfer .next-transfer-panel .next-menu.next-ver.next-transfer-panel-list {
+        min-width: 393px !important;
+    }
+}
+
+.adaptationContainer .IcePanelContainer-4 .container-block {overflow: auto;}

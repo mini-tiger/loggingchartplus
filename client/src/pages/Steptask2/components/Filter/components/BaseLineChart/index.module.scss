@@ -1,0 +1,11 @@
+.ss {
+    display: block;
+    transform: rotate(-90deg);
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    border: 1px solid #000;
+    bottom: 50px;
+    left: -100px;
+    z-index: 100;
+}

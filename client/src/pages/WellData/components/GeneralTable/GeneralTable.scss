@@ -1,0 +1,28 @@
+html,body{
+    overflow-x: hidden;
+}
+.table-display-page{
+    margin:0 !important;
+}
+.sider{
+    width: 500px;
+    position: absolute;
+    z-index: 99;
+    background: #fff;
+    right: -500px;
+    height: 100%;
+    border-left:1px solid #ccc;
+    transition: all 1s;
+    &.active{
+        right: 0;
+        .container-block {
+            background: transparent;
+        }
+    }
+}
+.upload{
+    display: flex !important;
+    .next-upload-inner{
+        display: flex;
+    }
+}

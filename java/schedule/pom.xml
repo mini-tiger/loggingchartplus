@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.itma</groupId>
+	<artifactId>kms-schedule</artifactId>
+	<packaging>jar</packaging>
+	<version>1.1</version>
+	
+	<name>kms-schedule</name>
+	<url>http://kms.itma.com.cn</url>
+	<inceptionYear>2020-2020</inceptionYear>
+
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+	    <outputDirectory>target/classes</outputDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<showWarnings>true</showWarnings>
+			        <archive>
+			            <manifest>
+			                <mainClass>com.itma.kms.Dispatcher</mainClass>
+			                <addClasspath>true</addClasspath>
+			            	<classpathPrefix>lib/</classpathPrefix>
+			            </manifest>
+			        </archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<!--这里要替换成jar包main方法所在类 -->
+							<mainClass>com.itma.kms.Dispatcher</mainClass>
+						</manifest>
+						<manifestEntries>
+							<Class-Path>.</Class-Path>
+						</manifestEntries>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+				<executions>
+				    <execution>
+						<id>install-apache-ant-zip</id>
+						<phase>clean</phase>
+						<configuration>
+							<file>${project.basedir}/lib/apache-ant-zip-2.3.jar</file>
+							<repositoryLayout>default</repositoryLayout>
+							<groupId>org.apache</groupId>
+							<artifactId>apache-ant-zip</artifactId>
+							<version>2.3</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+					</execution>
+				    <execution>
+						<id>install-ModelPredict</id>
+						<phase>clean</phase>
+						<configuration>
+							<file>${project.basedir}/lib/ModelPredict-2.0.jar</file>
+							<repositoryLayout>default</repositoryLayout>
+							<groupId>com.beagledata</groupId>
+							<artifactId>ModelPredict</artifactId>
+							<version>2.0</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+					</execution>
+				    <execution>
+						<id>install-tai-genmodel</id>
+						<phase>clean</phase>
+						<configuration>
+							<file>${project.basedir}/lib/tai-genmodel-3.26.0.10.jar</file>
+							<repositoryLayout>default</repositoryLayout>
+							<groupId>com.beagledata</groupId>
+							<artifactId>tai-genmodel</artifactId>
+							<version>3.26.0.10</version>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+						</configuration>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<!-- 项目属性 -->
+	<properties>
+		
+		<!-- main version setting -->
+
+		<!-- environment setting -->
+		<jdk.version>1.8</jdk.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<downloadSources>true</downloadSources>
+		
+	</properties>
+	
+	<!-- 设定主仓库，按设定顺序进行查找。 -->
+	<repositories>
+		<repository>
+			<id>itma-repos</id>
+			<name>Itma Repository</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+		</repository>
+	</repositories>
+	<!-- 设定插件仓库 -->
+	<pluginRepositories> 
+		<pluginRepository>
+			<id>itma-repos</id>
+			<name>Itma Repository</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+		</pluginRepository>
+	</pluginRepositories> 
+	
+	<!-- 依赖项定义 -->
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.26</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.26</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.mongodb</groupId>
+		    <artifactId>mongo-java-driver</artifactId>
+		    <version>3.0.4</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>fastjson</artifactId>
+		    <version>1.2.58</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache</groupId>
+			<artifactId>apache-ant-zip</artifactId>
+			<version>2.3</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.beagledata</groupId>
+			<artifactId>ModelPredict</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.beagledata</groupId>
+			<artifactId>tai-genmodel</artifactId>
+			<version>3.26.0.10</version>
+		</dependency>
+	</dependencies>
+
+	<!-- 开发者信息 -->
+	<developers>  
+		<developer>
+			<id>itma</id>
+			<name>Lclarck</name>
+			<email>lichu@itma.com.cn</email>
+			<roles><role>Project lead</role></roles>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
+	
+</project>
